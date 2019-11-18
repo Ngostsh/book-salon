@@ -1,0 +1,33 @@
+.base2 {
+  height: 100vh;
+  background-size: cover;
+  background-image: url(show.jpg);
+}
+
+.box2 {
+  padding-top: 8%;
+  margin-left: 8%;
+  display: flex;
+}
+
+.book-image {
+  width: 500px;
+  height: 600px;
+  flex:none
+}
+
+.review-contents {
+  color: azure;
+  margin-left: 50px;
+  margin-right: 80px;
+  font-size: 1.2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.review-contents:first-letter{
+  font-size: 3em;
+  line-height: 1;
+  float: left;
+  margin: 0 .2em 0 0;
+  padding: .1em 0;
+}

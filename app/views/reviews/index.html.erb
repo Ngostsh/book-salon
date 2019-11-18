@@ -1,0 +1,36 @@
+    <body>
+      <div class=wallpaper>
+        <div id="menu" class="big-bg">
+            <header class="page-header wrapper">
+            </header>
+            <div class="menu-content wrapper">
+                <h2 class="page-title">BOOK SALON</h2>
+                <p>
+                    <%# 登録制の書評サービスです。 %>
+                    お気に入りの本を紹介しましょう！　
+          <a class="cp_btn" href="/reviews/new">書評を書く</a>
+                </p>
+            </div><!-- /.menu-content -->
+        </div><!-- /#menu -->
+
+        <div class="wrapper grid">
+            <%# <div class="item">
+                <img src="assets/life-sift.jpg" alt="">
+                <p>LIFE SHIFT</p>
+            </div> %>
+
+        <% @reviews.each do |review| %>
+            <div class="item">
+          <img src="<%= review.image %>" alt="">
+                <%= link_to "#{review.name}", "/reviews/#{review.id}", {method: :get, class: "review-btn"} %>
+            </div>
+        <% end %>
+        <%= paginate(@reviews) %>
+      </div>
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2019 Nagao</small></p>
+            </div>
+        </footer>
+    </body>
+</html>
