@@ -5,7 +5,7 @@
           <div class="user-sign_in">
             <% if user_signed_in? %>
               <div class="user_link">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
           </div>
     <% else %>
     <div class="user_link">
