@@ -1,19 +1,37 @@
 .base2 {
-  height: 100vh;
+  min-height:100vh;
   background-size: cover;
   background-image: url(show.jpg);
 }
 
 .box2 {
-  padding-top: 8%;
+  padding-top: 1%;
   margin-left: 8%;
   display: flex;
 }
 
+.user_edit_destory_link {
+  padding-top: 1%;
+  margin:0 0 0 8%;
+}
+
+.user_review_edit {
+  color: aliceblue;
+  border: 1px solid aliceblue;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.user_review_destroy {
+  color: aliceblue;
+  border: 1px solid aliceblue;
+  border-radius: 4px;
+}
+
 .book-image {
-  width: 500px;
-  height: 600px;
-  flex:none
+  width: 30%;
+  height: 80%;
+  flex: none;
 }
 
 .review-contents {
@@ -30,4 +48,16 @@
   float: left;
   margin: 0 .2em 0 0;
   padding: .1em 0;
+}
+
+.reviwer {
+  font-size: 2em;
+  color: aliceblue;
+}
+
+.book_name {
+  color: aliceblue;
+  font-size: 1.5em;
+  padding-top: 1%;
+  margin:0 0 0 8%;
 }

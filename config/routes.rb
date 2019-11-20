@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'reviews' => 'reviews#index'
     get 'reviews/new'  =>  'reviews#new'
     post  'reviews'      =>  'reviews#create'
-    get 'reviews/:id' => 'reviews#show' 
+    get 'reviews/:id' => 'reviews#show'
+    delete 'reviews/:id' => 'reviews#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
