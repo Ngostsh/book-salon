@@ -1,28 +1,40 @@
     <body>
       <div class=wallpaper>
         <div id="menu" class="big-bg">
+              <header class="header">
+          <div class="user-sign_in">
+            <% if user_signed_in? %>
+              <div class="user_link">
+              ようこそ <%= current_user.nick_name %> さん
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
+          </div>
+    <% else %>
+    <div class="user_link">
+        <%= link_to "ログイン", new_user_session_path, class: 'login' %>
+        <%= link_to "新規登録", new_user_registration_path, class: 'registration' %>
+    </div>
+    <% end %>
+    </div>
+    </header>
             <header class="page-header wrapper">
             </header>
             <div class="menu-content wrapper">
                 <h2 class="page-title">BOOK SALON</h2>
                 <p>
-                    <%# 登録制の書評サービスです。 %>
                     お気に入りの本を紹介しましょう！　
           <a class="cp_btn" href="/reviews/new">書評を書く</a>
                 </p>
-            </div><!-- /.menu-content -->
-        </div><!-- /#menu -->
+            </div>
+        </div>
 
         <div class="wrapper grid">
-            <%# <div class="item">
-                <img src="assets/life-sift.jpg" alt="">
-                <p>LIFE SHIFT</p>
-            </div> %>
 
         <% @reviews.each do |review| %>
             <div class="item">
+            <%= link_to "/reviews/#{review.id}", target: "_blank" do %>
           <img src="<%= review.image %>" alt="">
-                <%= link_to "#{review.name}", "/reviews/#{review.id}", {method: :get, class: "review-btn"} %>
+          <%= "#{review.name}" %>
+          <% end %>
             </div>
         <% end %>
         <%= paginate(@reviews) %>

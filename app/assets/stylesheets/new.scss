@@ -54,7 +54,8 @@ color: #fff;
 background-color: #696;
 border-bottom: 4px solid #464;
 cursor:pointer;
-transition:0.1s ease all
+transition:0.1s ease all;
+border-radius: 20px;
 }
 input[type=submit]:hover{
 opacity:0.6;
