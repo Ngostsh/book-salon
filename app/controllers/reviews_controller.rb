@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.order("created_at DESC").page(params[:page]).per(6)
+    @reviews = Review.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def show
@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def new
     if user_signed_in?
     else
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, notice: 'ログインして下さい'
     end
   end
 
