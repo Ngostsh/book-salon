@@ -1,14 +1,19 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.order("created_at DESC").page(params[:page]).per(6)
+    @reviews = Review.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def show
     @review = Review.find(params[:id])
+    @user = @review.user
   end
 
   def new
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path, notice: 'ログインして下さい'
+    end
   end
 
   def create
@@ -41,7 +46,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.permit(:name, :image, :text)
+    params.permit(:name, :image, :text).merge(user_id: current_user.id)
   end
 
   private
