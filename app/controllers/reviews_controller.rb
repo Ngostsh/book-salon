@@ -17,7 +17,22 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    Review.create(review_params)
+    if params[:image].present?
+      @review = Review.new(review_params)
+      if @review.save
+        redirect_to root_path, notice: '投稿ありがとうございます'
+      else
+        redirect_to root_path, notice: "投稿に失敗しました"
+      end
+    else
+      @review = Review.new(review_params)
+      @review.image = File.open("app/assets/images/default.jpg")
+      if @review.save
+        redirect_to root_path, notice: '投稿ありがとうございます'
+      else
+        redirect_to root_path, notice: "投稿に失敗しました"
+      end
+    end
   end
 
   def destroy

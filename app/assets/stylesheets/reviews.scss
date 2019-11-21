@@ -123,7 +123,7 @@ iframe {
   gap: 26px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   margin-top: 6%;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 a.cp_btn {
@@ -149,6 +149,7 @@ footer {
     background: #432;
     text-align: center;
     padding: 26px 0;
+    width: 100%;
 }
 
 footer p {
