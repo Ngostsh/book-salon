@@ -1,4 +1,17 @@
- <div class=base2>
+<div class=base2>
+<% if current_user == @user %>
+<div class=user_edit_destory_link>
+<span class = reviwer>Your book review</span>
+<%= link_to "編集", "/reviews/edit/#{@review.id}", method: :get, class: 'user_review_edit' %>
+<%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'user_review_destroy' %>
+</div>
+<% else %>
+<div class=user_edit_destory_link>
+<span class = reviwer> 
+<%= @user.nick_name %>'s Book Review
+</span>
+</div>
+<% end %>
  <div class=box2>
   <div class="book-image">
     <img src="<%= @review.image %>" alt="">

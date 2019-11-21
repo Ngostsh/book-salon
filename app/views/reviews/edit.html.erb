@@ -1,0 +1,28 @@
+ <div class=base>
+ <div class="contact-form">
+  <%= form_with(model: @review, url: "/reviews/#{@review.id}", local: true) do |f| %>
+ <div class=box>
+ <h2 class=form-name>EDIT BOOK REVIEW</h2>
+   <div class="image_field">
+    <%= f.label :image, 'Previous image', class: "image_label"%><br>
+    <%= image_tag @review.image.url, size: "120x130", class: "image_file" %>
+    <br>
+    <%= f.file_field :image, value: @review.image %>
+    </div>
+  <div class = "book_name_block">
+    <%= f.label :name, 'Book name'%><br>
+    <%= f.text_field :name, placeholder: "", value: @review.name, class: "book-name_field"%>
+  </div>
+  <div class = "book_review_block">
+  <%= f.label :text, 'Book review', class: "review_label"%><br>
+    <%= f.text_area :text, placeholder: "", value: @review.text, class: "book-review_area" %>
+  </div>
+  <div class= review_submit_box >
+  <div class="review_submit">
+    <%= f.submit "投稿する" %>
+  </div>
+  </div>
+  </div>
+  <% end %>
+  <div>
+</div>
