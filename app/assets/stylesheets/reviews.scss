@@ -84,6 +84,12 @@ iframe {
     background-image: url(main.jpg);
     min-height: 100vh;
 }
+
+#menu2 {
+    background-color: rgb(255, 246, 232);
+    min-height: 100vh;
+}
+
 .menu-content {
     text-align: center;
     margin-top: 15%;
@@ -198,4 +204,36 @@ footer p {
 	border-bottom: 2px solid #00838F;
 	border-radius: 4px;
 	box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.user_name {
+    color: black;
+    padding-top: 1em;
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+.user_name2 {
+    color: black;
+    padding-top: 1em;
+    padding-left: 1em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.review_link_to {
+  color: black;
+  font-weight: bold;
+}
+
+.New_Book_Reviws {
+  font-family: 'Philosopher', serif;
+  margin: 5%;
+  text-align: center;
+  color: black;
+  font-size: 3em;
+  text-shadow:1px 1px 0 rgb(252, 229, 206), -1px -1px 0 rgb(252, 229, 206),
+  -1px 1px 0 rgb(252, 229, 206), 1px -1px 0 rgb(252, 229, 206),
+  0px 1px 0 rgb(252, 229, 206),  0-1px 0 rgb(252, 229, 206),
+  -1px 0 0 rgb(252, 229, 206), 1px 0 0 rgb(252, 229, 206);
 }

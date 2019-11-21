@@ -4,7 +4,9 @@
           <div class="user-sign_in">
             <% if user_signed_in? %>
               <div class="user_link">
+              <%= link_to "/users/#{current_user.id}", class: "user_link_to", target: "_blank" do %>
               ようこそ <%= current_user.nick_name %> さん
+              <% end %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
           </div>
     <% else %>
@@ -24,12 +26,14 @@
           <a class="cp_btn" href="/reviews/new">書評を書く</a>
             </div>
         </div>
-
+        <% if Review.page(params[:page]) == Review.page(1)%>
+          <p class = "New_Book_Reviws">New Book Reviews</p>
+          <% end %>
         <div class="wrapper grid">
 
         <% @reviews.each do |review| %>
             <div class="item">
-            <%= link_to "/reviews/#{review.id}", target: "_blank" do %>
+            <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
           <img src="<%= review.image %>" alt="">
           <%= "#{review.name}" %>
           <% end %>
