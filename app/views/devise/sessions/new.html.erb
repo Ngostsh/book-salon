@@ -21,9 +21,17 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "ログイン" %>
+    <%= f.submit "ログイン", class: "login"  %>
   </div><br>
 <% end %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= f.hidden_field :email, value: "test@test.com" %>
+  <%= f.hidden_field :password, value: "bbbbbb" %>
+  <div class="actions">
+    <%= f.submit "テストログイン", class: "login" %>
+    <p class="test_user">※入力せずにテストユーザーとしてもログインできます</p>
+  </div><br>
+  <% end %>
 
 <%= render "devise/shared/links" %>
 <br>

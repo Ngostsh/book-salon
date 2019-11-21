@@ -7,7 +7,7 @@
 
   <div class="field">
     <%= f.label :nick_name, 'ニックネーム'%><br>
-    <%= f.email_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
+    <%= f.text_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
   </div>
 
   <div class="field">
@@ -29,7 +29,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "新規登録" %>
+    <%= f.submit "新規登録", class: "login" %>
   </div><br>
 <% end %>
 
