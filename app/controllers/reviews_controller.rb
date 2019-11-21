@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def new
     if user_signed_in?
     else
-      redirect_to new_user_session_path, notice: 'ログインして下さい'
+      redirect_to new_user_session_path, notice: 'ログインが必要です'
     end
   end
 
