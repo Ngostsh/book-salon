@@ -15,8 +15,10 @@
   <%= f.label :text, 'Book review'%><br>
     <%= f.text_area :text, placeholder: "", value: "", class: "book-review_area" %>
   </div>
-  <div class="review_submit">
-    <%= f.submit "投稿する" %>
+  <div class= review_submit_box >
+  <div>
+    <%= f.submit "投稿する", class: "review_submit" %>
+  </div>
   </div>
   </div>
   <% end %>

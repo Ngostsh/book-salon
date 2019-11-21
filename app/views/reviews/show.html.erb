@@ -1,17 +1,24 @@
 <div class=base2>
 <% if current_user == @user %>
 <div class=user_edit_destory_link>
+<%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
 <span class = reviwer>Your book review</span>
+<% end %>
 <%= link_to "編集", "/reviews/edit/#{@review.id}", method: :get, class: 'user_review_edit' %>
 <%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'user_review_destroy' %>
 </div>
 <% else %>
 <div class=user_edit_destory_link>
 <span class = reviwer> 
+<%= link_to "/users/#{@user.id}", class: "user_link_to" do %>
 <%= @user.nick_name %>'s Book Review
+<% end %>
 </span>
 </div>
 <% end %>
+  <div class = "book_name">
+<%= @review.name %>
+</div>
  <div class=box2>
   <div class="book-image">
     <img src="<%= @review.image %>" alt="">
@@ -20,7 +27,4 @@
     <%= simple_format(@review.text) %>
   </div>
   </div>
-  <div class = book_name>
-<%= @review.name %>
-</div>
 </div>

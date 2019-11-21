@@ -1,0 +1,38 @@
+      <div class=wallpaper>
+        <div id="menu2" class="big-bg">
+              <header class="header">
+          <div class="user-sign_in">
+            <% if user_signed_in? %>
+            <% if current_user.id == @user.id %>
+              <div class="user_name">
+              あなたのブックレビュー
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
+          </div>
+    <% else %>
+    <div class="user_name2">
+    <%= @user.nick_name %> さんのブックレビュー
+    </div>
+    <% end %>
+    <% else %>
+    <div class="user_name2">
+    <%= @user.nick_name %> さんのブックレビュー
+    </div>
+    <% end %>
+    </div>
+    </header>
+        <div class="wrapper grid">
+        <% @reviews.each do |review| %>
+            <div class="item">
+            <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
+          <img src="<%= review.image %>" alt="">
+          <%= "#{review.name}" %>
+          <% end %>
+            </div>
+        <% end %>
+        <%= paginate(@reviews) %>
+      </div>
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2019 Nagao</small></p>
+            </div>
+        </footer>
