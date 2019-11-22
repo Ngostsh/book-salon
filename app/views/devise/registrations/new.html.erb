@@ -6,7 +6,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nick_name, 'ニックネーム'%><br>
+    <%= f.label :nick_name, 'ニックネーム（２０文字以内）'%><br>
     <%= f.text_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
   </div>
 
@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :password, 'パスワード' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
+    <em>(<%= @minimum_password_length %> 文字以上、半角英数字の両方が含まれるもの)</em>
     <% end %><br />
     <%= f.password_field :password, class: "user_input", autocomplete: "new-password" %>
   </div>
