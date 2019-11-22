@@ -83,3 +83,6 @@ production:
   database: book-salon_production
   username: book-salon
   password: <%= ENV['BOOK-SALON_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
