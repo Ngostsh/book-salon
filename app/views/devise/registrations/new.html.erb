@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :password, 'パスワード' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上、半角英数字の両方が含まれるもの)</em>
+    <span>(<%= @minimum_password_length %> 文字以上、半角英数字の両方が含まれるもの)</span>
     <% end %><br />
     <%= f.password_field :password, class: "user_input", autocomplete: "new-password" %>
   </div>
