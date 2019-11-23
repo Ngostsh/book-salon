@@ -1,15 +1,18 @@
 <div class=base2>
+<div class=show_box>
 <% if current_user == @user %>
-<div class=user_edit_destory_link>
+<div class=user_show_link>
 <%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
-<span class = reviwer>Your book review</span>
+<span class = reviewer>Your book review</span>
 <% end %>
+<div class=user_edit_destory_link>
 <%= link_to "編集", "/reviews/edit/#{@review.id}", method: :get, class: 'user_review_edit' %>
 <%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'user_review_destroy' %>
 </div>
+</div>
 <% else %>
 <div class=user_edit_destory_link>
-<span class = reviwer> 
+<span class = other_reviewer> 
 <%= link_to "/users/#{@user.id}", class: "user_link_to" do %>
 <%= @user.nick_name %>'s Book Review
 <% end %>
@@ -25,6 +28,7 @@
   </div>
   <div class="review-contents">
     <%= simple_format(@review.text) %>
+  </div>
   </div>
   </div>
 </div>

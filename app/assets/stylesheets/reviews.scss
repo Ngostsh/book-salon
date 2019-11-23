@@ -130,12 +130,24 @@ iframe {
     -1px 0 0 rgb(252, 229, 206), 1px 0 0 rgb(252, 229, 206);
 }
 
+@media screen and (max-width:677px) {
+    .menu-content .page-title {
+      font-size: 3em;
+    }
+}
+
 .page-subtitle {
   font-size: 1.5em;
   text-shadow:1px 1px 0 rgb(252, 229, 206), -1px -1px 0 rgb(252, 229, 206),
   -1px 1px 0 rgb(252, 229, 206), 1px -1px 0 rgb(252, 229, 206),
   0px 1px 0 rgb(252, 229, 206),  0-1px 0 rgb(252, 229, 206),
   -1px 0 0 rgb(252, 229, 206), 1px 0 0 rgb(252, 229, 206);
+}
+
+@media screen and (max-width:677px) {
+    .page-subtitle {
+      font-size: 1.2em;
+    }
 }
 
 .menu-content p {
@@ -182,6 +194,15 @@ a.cp_btn {
 @media screen and (max-width:1128px) {
     a.cp_btn {
         font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width:665px) {
+    a.cp_btn {
+        display: block;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: 20px;
     }
 }
 

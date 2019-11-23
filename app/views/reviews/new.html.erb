@@ -5,7 +5,7 @@
  <h2 class=form-name>NEW BOOK REVIEW</h2>
    <div class="image_field">
     <%= f.label :image, 'Book Image', class: "image_label"%><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "image_post" %>
     </div>
   <div class = "book_name_block">
     <%= f.label :name, 'Book Name(40 characters or less)'%><br>

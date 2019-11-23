@@ -10,28 +10,66 @@
   }
 }
 
+.show_box {
+  padding: 5%;
+}
+
+@media screen and (orientation: portrait) {
+  .show_box {
+    padding: 50% 5% 50% 5%;
+  }
+}
+
 .box2 {
   padding-top: 1%;
   margin-left: 8%;
   display: flex;
 }
 
-.user_edit_destory_link {
-  padding-top: 1%;
-  margin:0 0 0 8%;
+@media screen and (orientation: portrait) {
+  .box2 {
+    display: block;
+  }
 }
+
+.user_show_link {
+  margin:0 8% 0 8%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (orientation: portrait) {
+  .user_edit_destory_link {
+    display: flex;
+  }
+}
+
 
 .user_review_edit {
   color: aliceblue;
   border: 1px solid aliceblue;
   border-radius: 4px;
-  margin-left: 4px;
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+@media screen and (orientation: portrait) {
+  .user_review_edit {
+    font-size: 2em;
+  }
 }
 
 .user_review_destroy {
   color: aliceblue;
   border: 1px solid aliceblue;
   border-radius: 4px;
+  font-size: 1.5em;
+}
+
+@media screen and (orientation: portrait) {
+  .user_review_destroy {
+    font-size: 2em;
+  }
 }
 
 .book-image {
@@ -40,12 +78,30 @@
   flex: none;
 }
 
+@media screen and (orientation: portrait) {
+  .book-image {
+    padding-top: 20px;
+  }
+}
+
 .review-contents {
   color: azure;
+  border-radius: 5px;
+  background-color:rgba(156, 156, 156, 0.55);
+  padding: 1%;
   margin-left: 50px;
   margin-right: 80px;
   font-size: 1.2em;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+@media screen and (orientation: portrait) {
+  .review-contents {
+    margin-top: 40px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    background-color:rgba(156, 156, 156, 0.55);
+  }
 }
 
 .review-contents:first-letter{
@@ -56,25 +112,43 @@
   padding: .1em 0;
 }
 
-.reviwer {
-  font-size: 1.5em;
+.reviewer {
+  font-size: 2em;
   color: aliceblue;
+}
+
+.other_reviewer {
+  font-size: 2em;
+  color: aliceblue;
+  margin-left: 8%;
+}
+
+@media screen and (orientation: portrait) {
+  .other_reviewer {
+    margin: 0 auto;
+  }
 }
 
 .book_name {
   color: aliceblue;
   font-size: 1.5em;
   padding-top: 1%;
-  margin:0 0 0 8%;
+  margin:0 8% 0 8%;
   padding-bottom: 1%;
 }
 
-.user_link_to {
+@media screen and (orientation: portrait) {
+  .book_name {
+    padding-top: 20px;
+    font-size: 2em;
+  }
+}
+
+.user_link_to, .user_review_destroy, .user_review_edit {
   color: #FFF;
   -webkit-animation:blink 3s ease-in-out infinite alternate;
   -moz-animation:blink 3s ease-in-out infinite alternate;
   animation:blink 3s ease-in-out infinite alternate;
-  padding-right: 5px;
 }
 
 @-webkit-keyframes blink {
