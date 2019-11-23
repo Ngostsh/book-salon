@@ -21,6 +21,12 @@ img {
     padding: 0 4%;
 }
 
+@media screen and (max-width:1128px) {
+    .wrapper {
+        padding: 0 10%;
+    }
+}
+
 .big-bg {
     background-size: cover;
     background-position: center top;
@@ -33,6 +39,13 @@ img {
     text-transform: uppercase;
     font-weight: normal;
 }
+
+@media screen and (max-width:1128px) {
+    .page-title {
+        font-size: 5rem;
+    }
+}
+
 .sub-title {
     font-size: 1.375rem;
     padding: 0 8px 8px;
@@ -85,11 +98,11 @@ iframe {
     min-height: 100vh;
 }
 
-// @media screen and (min-width:1200px) {
-//     #menu {
-//         background-size: cover;
-//     }
-// }
+@media screen and (max-width:1128px) {
+    #menu {
+        min-height: 60vh;
+    }
+}
 
 #menu2 {
     background-color: rgb(255, 246, 232);
@@ -101,6 +114,13 @@ iframe {
     margin-top: 15%;
     box-sizing: content-box;
 }
+
+@media screen and (max-width:1128px) {
+    .menu-content {
+        margin-top: 8%;
+    }
+}
+
 .menu-content .page-title {
     text-align: center;
     text-shadow:1px 1px 0 rgb(252, 229, 206), -1px -1px 0 rgb(252, 229, 206),
@@ -130,6 +150,13 @@ iframe {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   margin-top: 6%;
   padding-bottom: 50px;
+}
+
+@media screen and (max-width:1128px) {
+    .grid {
+        gap: 100px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
 }
 
 a.cp_btn {
@@ -269,4 +296,9 @@ footer p {
   padding-left: 2%;
   padding-bottom: 2%;
   color: red;
+}
+
+.paginate {
+  padding-bottom: 2%;
+  padding-left: 5%;
 }
