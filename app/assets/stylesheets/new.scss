@@ -4,6 +4,13 @@
   background-image: url(write.jpg);
 }
 
+@media screen and (orientation: portrait) {
+  .base {
+    background-image: url(write2.jpg);
+  }
+}
+
+
 .box {
   padding-top: 5%;
 }
