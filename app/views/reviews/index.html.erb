@@ -36,9 +36,9 @@
             <div class="review_item">
             <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
           <img src="<%= review.image %>" alt="">
-          <div class=review_book_name>
+          <p class=review_book_name>
           <%= "#{review.name}" %>
-          </div>
+          </p>
           <% end %>
             </div>
         <% end %>

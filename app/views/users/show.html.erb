@@ -22,10 +22,12 @@
     </header>
         <div class="wrapper grid">
         <% @reviews.each do |review| %>
-            <div class="item">
+            <div class="review_item">
             <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
           <img src="<%= review.image %>" alt="">
+          <p class=review_book_name>
           <%= "#{review.name}" %>
+          </p>
           <% end %>
             </div>
         <% end %>
