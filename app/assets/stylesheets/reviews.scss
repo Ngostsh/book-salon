@@ -117,7 +117,8 @@ iframe {
 
 @media screen and (max-width:1128px) {
     .menu-content {
-        margin:0 auto;
+    margin-top: 30%;
+    padding-bottom: 30%;
     }
 }
 
@@ -333,7 +334,7 @@ footer p {
   color: red;
 }
 
-.paginate {
+.paginate_box {
   padding-bottom: 2%;
   padding-left: 5%;
 }
