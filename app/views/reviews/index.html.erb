@@ -3,9 +3,9 @@
               <header class="header">
           <div class="user-sign_in">
             <% if user_signed_in? %>
-              <div class="user_link">
+              <div class="login_user_link">
               <%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
-              ようこそ <%= current_user.nick_name %> さん
+              <%= current_user.nick_name %> さんのマイページ
               <% end %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
           </div>
