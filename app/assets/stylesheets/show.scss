@@ -16,7 +16,7 @@
 
 @media screen and (orientation: portrait) {
   .show_box {
-    padding: 50% 5% 50% 5%;
+    padding: 10% 5% 50% 5%;
   }
 }
 
@@ -97,6 +97,7 @@
 
 @media screen and (orientation: portrait) {
   .review-contents {
+    margin-left: 0;
     margin-top: 40px;
     border-radius: 5px;
     font-size: 1.5em;
@@ -121,12 +122,6 @@
   font-size: 2em;
   color: aliceblue;
   margin-left: 8%;
-}
-
-@media screen and (orientation: portrait) {
-  .other_reviewer {
-    margin: 0 auto;
-  }
 }
 
 .book_name {

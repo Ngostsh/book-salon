@@ -20,14 +20,14 @@
     </div>
     <% end %>
     </header>
-        <div class="wrapper grid">
+        <div class="wrapper grid2">
         <% @reviews.each do |review| %>
             <div class="review_item">
             <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
           <img src="<%= review.image %>" alt="">
-          <p class=review_book_name>
-          <%= "#{review.name}" %>
-          </p>
+          <div class=review_book_name>
+          <p><%= "#{review.name}" %>
+          </p></div>
           <% end %>
             </div>
         <% end %>
