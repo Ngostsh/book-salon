@@ -1,3 +1,3 @@
 $(function(){
-  $('.notifications').animate({opacity: 0}, 3000)
+  $('.notifications').animate({opacity: 0}, 3000);
 });

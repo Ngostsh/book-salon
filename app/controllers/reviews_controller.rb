@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :destroy, :edit, :update]
-  before_action :correct_referer, only: [:show, :destroy, :edit, :update]
+  before_action :correct_referer, only: [:new, :show, :destroy, :edit, :update]
+  before_action :user_login_check, only: [:new, :create, :destroy, :edit, :update]
 
   def index
     @reviews = Review.order("created_at DESC").page(params[:page]).per(8)
@@ -11,17 +12,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-    else
-      redirect_to new_user_session_path, notice: 'ログインが必要です'
-    end
   end
 
   def create
     if params[:image].present?
       @review = Review.new(review_params)
       if @review.save
-        redirect_to root_path, notice: '投稿ありがとうございます'
+        redirect_to root_url, notice: '投稿ありがとうございます'
       else
         flash[:notice] = "投稿に失敗しました"
         render action: :new
@@ -30,7 +27,7 @@ class ReviewsController < ApplicationController
       @review = Review.new(review_params)
       @review.image = File.open("app/assets/images/default.jpg")
       if @review.save
-        redirect_to root_path, notice: '投稿ありがとうございます'
+        redirect_to root_url, notice: '投稿ありがとうございます'
       else
         flash[:notice] = "投稿に失敗しました"
         render action: :new
@@ -41,24 +38,24 @@ class ReviewsController < ApplicationController
   def destroy
     if @review.user_id == current_user.id
       @review.destroy
-      redirect_to root_path, notice: '書評を削除しました'
+      redirect_to root_url, notice: '書評を削除しました'
     else
-      redirect_to root_path, alert: '書評の削除に失敗しました'
+      redirect_to root_url, alert: '書評の削除に失敗しました'
     end
   end
 
   def edit
     if @review.user_id != current_user.id
-      redirect_to root_path, alert: '投稿ユーザーではないため、編集できません'
+      redirect_to root_url, alert: '投稿ユーザーではないため、編集できません'
     end
   end
 
   def update
     if @review.user_id == current_user.id
       @review.update(review_update_params)
-      redirect_to root_path, notice: '書評を更新しました'
+      redirect_to root_url, notice: '書評を更新しました'
     else
-      redirect_to root_path, alert: '投稿ユーザーではないため、書評の更新に失敗しました'
+      redirect_to root_url, alert: '投稿ユーザーではないため、書評の更新に失敗しました'
     end
   end
 
@@ -73,12 +70,22 @@ class ReviewsController < ApplicationController
   end
   
   def set_review
-    @review = Review.find(params[:id])
+    if Review.where(id: params[:id]).present?
+      @review = Review.find(params[:id])
+    else
+      redirect_to root_url
+    end
   end
 
   def correct_referer
     if request.referer.nil?
-      redirect_to root_path, alert: 'url直打ちはご遠慮下さい'
+      redirect_to root_url
+    end
+  end
+
+  def user_login_check
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: 'ログインが必要です'
     end
   end
 
