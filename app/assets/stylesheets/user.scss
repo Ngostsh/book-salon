@@ -45,3 +45,31 @@ input#user_password_confirmation{
   font-size: 1.5em;
   width: 200px;
 }
+
+.user_profile {
+  width: 100%;
+  margin: 120px 10% 5% 5%;
+  font-size: 1.5em;
+  border: 4px solid rgb(79, 215, 233);
+  border-radius: 0.4em;
+  background-color: rgba(255, 255, 255, 0.527);
+}
+
+.profile_text {
+  padding: 1%;
+}
+
+.user_image {
+  padding: 120px 0 5% 10%;
+}
+
+.user_name_under_image {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1%
+}
+
+.user_image_profile {
+  display: flex;
+}

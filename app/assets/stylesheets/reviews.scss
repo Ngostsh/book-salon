@@ -12,10 +12,11 @@ body{
 a {
     text-decoration: none;
 }
-img {
-    max-width: 100%;
-    display: block;
-}
+// img {
+//     // max-width: 100%;
+//     display: block;
+// }
+
 .wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -180,7 +181,7 @@ iframe {
   display: grid;
   gap: 26px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  padding-top: 10%;
+  padding-top: 3%;
   padding-bottom: 50px;
 }
 
