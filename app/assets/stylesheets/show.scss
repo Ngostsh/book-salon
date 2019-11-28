@@ -78,6 +78,11 @@
   flex: none;
 }
 
+.book-image img {
+  max-width: 100%;
+  display: block;
+}
+
 @media screen and (orientation: portrait) {
   .book-image {
     padding-top: 20px;
