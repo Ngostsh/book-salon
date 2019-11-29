@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
       if @review.save
         redirect_to root_url, notice: '投稿ありがとうございます'
       else
-        flash[:notice] = "投稿に失敗しました"
+        flash.now[:notice] = "投稿に失敗しました"
         render action: :new
       end
     else
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       if @review.save
         redirect_to root_url, notice: '投稿ありがとうございます'
       else
-        flash[:notice] = "投稿に失敗しました"
+        flash.now[:notice] = "投稿に失敗しました"
         render action: :new
       end
     end
