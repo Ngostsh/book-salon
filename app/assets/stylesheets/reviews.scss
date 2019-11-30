@@ -283,6 +283,10 @@ footer p {
     font-weight: bold;
 }
 
+.user_link_to {
+    padding-top: 3px;
+}
+
 @media screen and (max-width:1128px) {
     .user_link {
         font-size: 1.5em;
@@ -292,11 +296,10 @@ footer p {
 .login_user_link {
     display: flex;
     color: #FFF;
-    padding-top: 16px;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-top: 15px;
+    padding-left: 3%;
+    padding-right: 3%;
     font-weight: bold;
-    justify-content: space-between;
     font-size: 1.5em;
 }
 
@@ -341,6 +344,7 @@ footer p {
 }
 
 .logout{
+    margin-left: 3%;
     font-size: 1.5rem;
 	position: relative;
 	width: 160px;
