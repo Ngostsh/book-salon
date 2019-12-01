@@ -454,16 +454,12 @@ footer p {
 .menu_button {
   position: absolute;
   top: 12px;
-  right: 40px;
+  right: 3%;
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: #FFF;
   font-size: 2rem;
-}
-
-.fa-caret-down {
-  margin-left: 10px;
 }
 
 ul {
@@ -503,7 +499,6 @@ li {
     .menu_button {
         position: absolute;
         top: 0;
-        right: 50px;
         font-size: 3rem;
       }
 
