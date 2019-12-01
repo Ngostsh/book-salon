@@ -5,21 +5,20 @@
             <% if user_signed_in? %>
               <div class="login_user_link">
               <%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
-              <%= current_user.nick_name %> さんのマイページ
+              ようこそ <%= current_user.nick_name %> さん
               <% end %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
-              <div>
+              </div>
               <nav>
-                <button class=menu_button>Menu</button>
+                <button class=menu_button><span>Menu</span>
+                <i class="fas fa-caret-down"></i>
+                </button>
                 <ul>
-                <li><a href="#" class=menu_link>マイページ</a><li>
-                <li><a href="#" class=menu_link>レビュー一覧</a><li>
-                <li><a href="#" class=menu_link>いいね一覧</a><li>
-                <li><a href="#" class=menu_link>ログアウト</a><li>
+                <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "menu_link" %></li>
+                <li><a href="#" class=menu_link>コメント一覧</a></li>
+                <li><a href="#" class=menu_link>いいね一覧</a></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu_link" %></li>
                 </ul>
               </nav>
-              </div>
-          </div>
     <% else %>
     <div class="user_link">
         <%= link_to "ログイン", new_user_session_path, class: 'login' %>

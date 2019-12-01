@@ -6,7 +6,17 @@
             <div class="user-sign_in">
             <div class=login_user_link>
               あなたのブックレビュー
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
+              <nav>
+                <button class=menu_button><span>Menu</span>
+                <i class="fas fa-caret-down"></i>
+                </button>
+                <ul>
+                <li><%= link_to "トップページ", root_path, class: "menu_link" %></li>
+                <li><a href="#" class=menu_link>コメント一覧</a></li>
+                <li><a href="#" class=menu_link>いいね一覧</a></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu_link" %></li>
+                </ul>
+              </nav>
           </div>
           </div>
     <% else %>
