@@ -6,18 +6,26 @@
             <div class="user-sign_in">
             <div class=login_user_link>
               あなたのブックレビュー
+              </div>
               <nav>
                 <button class=menu_button><span>Menu</span>
                 <i class="fas fa-caret-down"></i>
                 </button>
                 <ul>
-                <li><%= link_to "トップページ", root_path, class: "menu_link" %></li>
-                <li><a href="#" class=menu_link>コメント一覧</a></li>
-                <li><a href="#" class=menu_link>いいね一覧</a></li>
-                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu_link" %></li>
+                <%= link_to root_path, class: "menu_link" do %>
+                <li>トップページ</li>
+                <% end %>
+                <%= link_to "#", class: "menu_link" do %>
+                <li>コメント一覧</li>
+                <% end %>
+                <%= link_to "#", class: "menu_link" do %>
+                <li>いいね一覧</li>
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "menu_link" do %>
+                <li class=li_last>ログアウト</li>
+                <% end %>
                 </ul>
               </nav>
-          </div>
           </div>
     <% else %>
     <div class=user-sign_in>

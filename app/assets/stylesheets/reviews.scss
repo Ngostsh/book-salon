@@ -480,10 +480,18 @@ li {
     text-align: center;
     width: 200px;
     height: 60px;
-    border-right: 4px solid #fff;
-    border-left: 4px solid #fff;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 4px solid rgba(255, 255, 255, 0.5);
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    border-top: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.li_last {
+    background-color:  rgba(68, 51, 34, 0.712);
+    line-height: 60px;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
 }
 
 .menu_link {
