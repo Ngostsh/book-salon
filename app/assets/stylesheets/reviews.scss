@@ -446,3 +446,17 @@ footer p {
         font-size: 1.5rem;
     }
 }
+
+.menu_button {
+  position: absolute;
+  top: 17px;
+  right: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  display: none;
+  list-style-type: none;
+} 

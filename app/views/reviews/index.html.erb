@@ -8,6 +8,17 @@
               <%= current_user.nick_name %> さんのマイページ
               <% end %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout' %>
+              <div>
+              <nav>
+                <button class=menu_button>Menu</button>
+                <ul>
+                <li><a href="#" class=menu_link>マイページ</a><li>
+                <li><a href="#" class=menu_link>レビュー一覧</a><li>
+                <li><a href="#" class=menu_link>いいね一覧</a><li>
+                <li><a href="#" class=menu_link>ログアウト</a><li>
+                </ul>
+              </nav>
+              </div>
           </div>
     <% else %>
     <div class="user_link">
