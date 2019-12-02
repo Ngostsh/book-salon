@@ -241,14 +241,14 @@ position: relative;
 }
 
 a.cp_btn {
-    line-height: 50px;
+    line-height: 60px;
     padding: 0;
     margin: 0 auto;
     margin-top: 25px;
     display: block;
     font-size: 1.5rem;
-    width: 160px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     // padding: 0.5em;
     text-align: center;
     text-decoration: none;
@@ -317,7 +317,7 @@ footer p {
     margin-right: 0.5em;
     font-size: 1.5rem;
 	position: relative;
-	width: 160px;
+	width: 240px;
 	padding: 0.5em;
 	text-align: center;
 	text-decoration: none;
@@ -513,12 +513,6 @@ li {
 }
 
 @media screen and (orientation: portrait) {
-    .menu_button {
-        position: absolute;
-        top: 0;
-        font-size: 3rem;
-      }
-
     li {
         line-height: 90px;
         width: 300px;
@@ -553,9 +547,9 @@ li {
   margin-right: 10px;
 }
 
-// .fa-edit {
-//   margin-right: 0px;
-// }
+.fa-edit {
+  margin-right: 12px;
+}
 
 .fa-sign-in-alt {
   margin-right: 8px;
@@ -566,5 +560,5 @@ li {
 }
 
 .fa-book {
-  margin-right: 12px;
+  margin-right: 8px;
 }
