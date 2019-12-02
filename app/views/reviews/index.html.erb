@@ -14,23 +14,27 @@
                 </button>
                 <ul>
                 <%= link_to "/users/#{current_user.id}", class: "menu_link" do %>
-                <li>マイページ</li>
+                <li><i class="fas fa-user"></i>マイページ</li>
                 <% end %>
                 <%= link_to "#", class: "menu_link" do %>
-                <li>コメント一覧</li>
+                <li><i class="far fa-comment"></i>コメント一覧</li>
                 <% end %>
                 <%= link_to "#", class: "menu_link" do %>
-                <li>いいね一覧</li>
+                <li><i class="far fa-heart"></i>いいね一覧</li>
                 <% end %>
                 <%= link_to destroy_user_session_path, method: :delete, class: "menu_link" do %>
-                <li class=li_last>ログアウト</li>
+                <li class=li_last><i class="fas fa-sign-out-alt"></i>ログアウト</li>
                 <% end %>
                 </ul>
               </nav>
     <% else %>
     <div class="user_link">
-        <%= link_to "ログイン", new_user_session_path, class: 'login' %>
-        <%= link_to "新規登録", new_user_registration_path, class: 'registration' %>
+        <%= link_to new_user_session_path, class: 'login' do %>
+        <i class="fas fa-sign-in-alt"></i>ログイン
+        <% end %>
+        <%= link_to new_user_registration_path, class: 'registration' do %>
+        <i class="fas fa-user-plus"></i>新規登録
+        <% end %>
     </div>
     <% end %>
     </div>
@@ -41,7 +45,10 @@
                 <h2 class="page-title">BOOK SALON</h2>
                 <span class = page-subtitle>
                     お気に入りの本を紹介しましょう！</span>
-          <a class="cp_btn" href="/reviews/new">書評を書く</a>
+          <a class="cp_btn" href="/reviews/new"><i class="fas fa-edit"></i>書評を書く</a>
+          <% if user_signed_in? %>
+          <a class="cp_btn" href="#"><i class="fas fa-book"></i>本の登録</a>
+          <% end %>
             </div>
         </div>
         <div class = "brown_bar"></div>

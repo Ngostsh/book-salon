@@ -42,8 +42,10 @@ input#user_password_confirmation{
 }
 
 .login.test {
-  font-size: 1.5em;
-  width: 200px;
+  line-height: normal;
+  font-size: 1em;
+  width: 160px;
+  height: 62px;
 }
 
 .user_profile {
@@ -72,4 +74,8 @@ input#user_password_confirmation{
 
 .user_image_profile {
   display: flex;
+}
+
+.fa-user-check {
+  margin-right: 4px;
 }

@@ -29,7 +29,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "新規登録", class: "login" %>
+    <%= button_tag type: "submit", class: "login" do %>
+    <i class="fas fa-user-plus"></i>新規登録
+    <% end %>
   </div><br>
 <% end %>
 
