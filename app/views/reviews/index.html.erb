@@ -4,15 +4,38 @@
           <div class="user-sign_in">
             <% if user_signed_in? %>
               <div class="login_user_link">
-              <%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
-              ようこそ <%= current_user.nick_name %> さん
-              <% end %>
+    <nav>
+      <button class=category_button><i class="fas fa-bars"></i>
+      </button>
+      <ul class=category>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コンピュタ・IT</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>文学・評論</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コミック</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li class=li_last>その他</li>
+      <% end %>
+      </ul>
+    </nav>
+    <form class=search_form>
+    <%= form_with(model: @review, url: "#", local: true) do |f| %>
+      <%= f.text_field :name, class: 'form__message', placeholder: ''%>
+      <%= button_tag type: "submit", class: "search" do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+      <% end %>
+      </form>
               </div>
               <nav>
                 <button class=menu_button><span>Menu</span>
                 <i class="fas fa-caret-down"></i>
                 </button>
-                <ul>
+                <ul class=menu>
                 <%= link_to "/users/#{current_user.id}", class: "menu_link" do %>
                 <li><i class="fas fa-user"></i>マイページ</li>
                 <% end %>

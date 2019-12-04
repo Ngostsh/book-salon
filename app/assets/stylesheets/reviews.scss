@@ -290,6 +290,8 @@ footer p {
     padding-top: 18px;
     padding-left: 1em;
     font-weight: bold;
+    width: 365px;
+    margin: 0 0 0 auto;
 }
 
 .user_link_to {
@@ -487,6 +489,14 @@ ul {
   top: 80px;
 }
 
+ul.category {
+  left: 0;
+  position: absolute;
+  display: none;
+  list-style-type: none;
+  top: 80px;
+}
+
 li {
     background-color:  rgba(68, 51, 34, 0.712);
     line-height: 60px;
@@ -508,6 +518,11 @@ li {
 }
 
 .menu_link {
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+.category_link {
   color: #FFF;
   font-size: 1.5rem;
 }
@@ -561,4 +576,38 @@ li {
 
 .fa-book {
   margin-right: 8px;
+}
+
+
+.form__message {
+    height: 45px;
+    width: 100%;
+    padding: 0 40px 0 20px;
+    color: #434a54;
+    border-style: none;
+    background-color: rgba(221, 221, 221, 0.705);
+    border-radius: 20px;
+}
+
+.search_form {
+    box-sizing: border-box;
+    padding-top: 2.5px;
+    position: relative;
+    width: 50%;
+}
+
+.category_button {
+  margin-top: 5px;
+  margin-right: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+.search {
+  position: absolute;
+  right: 15px;
+  top: 5px;
 }
