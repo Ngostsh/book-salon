@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="actions">
-    <%= button_tag type: "submit", class: "login" do %>
+    <%= button_tag type: "submit", class: "user_login" do %>
     <i class="fas fa-sign-in-alt"></i>ログイン
     <% end %>
   </div><br>
@@ -30,7 +30,7 @@
   <%= f.hidden_field :email, value: "test@test.com" %>
   <%= f.hidden_field :password, value: "bbbbbb" %>
   <div class="actions">
-    <%= button_tag type: "submit", class: "login test" do %>
+    <%= button_tag type: "submit", class: "user_login test" do %>
     <i class="fas fa-user-check"></i>テストログイン
     <% end %>
     </div>

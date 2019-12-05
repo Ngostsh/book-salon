@@ -52,11 +52,36 @@
               </nav>
     <% else %>
     <div class="user_link">
+        <nav>
+      <button class=category_button><i class="fas fa-bars"></i>
+      </button>
+      <ul class=category>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コンピュタ・IT</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>文学・評論</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コミック</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li class=li_last>その他</li>
+      <% end %>
+      </ul>
+    </nav>
+    <form class=search_form>
+    <%= form_with(model: @review, url: "#", local: true) do |f| %>
+      <%= f.text_field :name, class: 'form__message', placeholder: ''%>
+      <%= button_tag type: "submit", class: "search" do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+      <% end %>
         <%= link_to new_user_session_path, class: 'login' do %>
-        <i class="fas fa-sign-in-alt"></i>ログイン
+        <i class="fas fa-sign-in-alt"></i><span>ログイン</span>
         <% end %>
         <%= link_to new_user_registration_path, class: 'registration' do %>
-        <i class="fas fa-user-plus"></i>新規登録
+        <i class="fas fa-user-plus"></i><span>新規登録</span>
         <% end %>
     </div>
     <% end %>
