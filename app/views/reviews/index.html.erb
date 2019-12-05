@@ -76,6 +76,8 @@
       <%= button_tag type: "submit", class: "search" do %>
     <i class="fas fa-search"></i>
     <% end %>
+    </form>
+    <div class=login_signup_button>
       <% end %>
         <%= link_to new_user_session_path, class: 'login' do %>
         <i class="fas fa-sign-in-alt"></i><span>ログイン</span>
@@ -83,6 +85,7 @@
         <%= link_to new_user_registration_path, class: 'registration' do %>
         <i class="fas fa-user-plus"></i><span>新規登録</span>
         <% end %>
+    </div>
     </div>
     <% end %>
     </div>
