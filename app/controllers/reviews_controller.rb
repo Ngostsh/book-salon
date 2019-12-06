@@ -58,7 +58,11 @@ class ReviewsController < ApplicationController
       redirect_to root_url, alert: '投稿ユーザーではないため、書評の更新に失敗しました'
     end
   end
-
+  
+  def search
+    @review = Review.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+  end
+  
   private
 
   def review_params

@@ -71,7 +71,7 @@
       </ul>
     </nav>
     <form class=search_form>
-    <%= form_with(model: @review, url: "#", local: true) do |f| %>
+    <%= form_with(model: @review, url: "/reviews/search", local: true) do |f| %>
       <%= f.text_field :name, class: 'form__message', placeholder: ''%>
       <%= button_tag type: "submit", class: "search" do %>
     <i class="fas fa-search"></i>
