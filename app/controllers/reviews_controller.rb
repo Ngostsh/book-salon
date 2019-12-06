@@ -60,7 +60,7 @@ class ReviewsController < ApplicationController
   end
   
   def search
-    @review = Review.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+    @reviews = Review.where('name LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).limit(20)
   end
   
   private
