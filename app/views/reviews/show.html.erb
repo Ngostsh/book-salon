@@ -7,7 +7,7 @@
 <% end %>
 <div class=user_edit_destory_link>
 <%= link_to "編集", "/reviews/edit/#{@review.id}", method: :get, class: 'user_review_edit' %>
-<%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'user_review_destroy' %>
+<%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'user_review_destroy', data: {confirm: "削除しますか？"} %>
 </div>
 </div>
 <% else %>

@@ -1,0 +1,90 @@
+              <header class="header">
+          <div class="user-sign_in">
+            <% if user_signed_in? %>
+              <div class="login_user_link">
+    <nav>
+      <button class=category_button><i class="fas fa-bars"></i>
+      </button>
+      <ul class=category>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コンピュタ・IT</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>文学・評論</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コミック</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li class=li_last>その他</li>
+      <% end %>
+      </ul>
+    </nav>
+    <div class=search_form>
+    <%= form_with(model: @review, url: reviews_search_path, method: :get, local: true) do |f| %>
+      <%= f.text_field :keyword, class: 'form__message', placeholder: ''%>
+      <%= button_tag type: "submit", name: nil, class: "search" do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+      <% end %>
+      </div>
+              </div>
+              <nav>
+                <button class=menu_button><span>Menu</span>
+                <i class="fas fa-caret-down"></i>
+                </button>
+                <ul class=menu>
+                <%= link_to "/users/#{current_user.id}", class: "menu_link" do %>
+                <li><i class="fas fa-user"></i>マイページ</li>
+                <% end %>
+                <%= link_to "#", class: "menu_link" do %>
+                <li><i class="far fa-comment"></i>コメント一覧</li>
+                <% end %>
+                <%= link_to "#", class: "menu_link" do %>
+                <li><i class="fas fa-cog"></i>設定</li>
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "menu_link" do %>
+                <li class=li_last><i class="fas fa-sign-out-alt"></i>ログアウト</li>
+                <% end %>
+                </ul>
+              </nav>
+    <% else %>
+    <div class="user_link">
+        <nav>
+      <button class=category_button><i class="fas fa-bars"></i>
+      </button>
+      <ul class=category>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コンピュタ・IT</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>文学・評論</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li>コミック</li>
+      <% end %>
+      <%= link_to "#", class: "category_link" do %>
+      <li class=li_last>その他</li>
+      <% end %>
+      </ul>
+    </nav>
+    <div class=search_form>
+    <%= form_with(model: @review, url: reviews_search_path, method: :get, local: true) do |f| %>
+      <%= f.text_field :keyword, class: 'form__message', placeholder: ''%>
+      <%= button_tag type: "submit", name: nil, class: "search" do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+    <% end %>
+    </div>
+    <div class=login_signup_button>
+        <%= link_to new_user_session_path, class: 'login' do %>
+        <i class="fas fa-sign-in-alt"></i><span>ログイン</span>
+        <% end %>
+        <%= link_to new_user_registration_path, class: 'registration' do %>
+        <i class="fas fa-user-plus"></i><span>新規登録</span>
+        <% end %>
+    </div>
+    </div>
+    <% end %>
+    </div>
+    </header>
