@@ -61,7 +61,13 @@ input#user_password_confirmation{
 }
 
 .user_image {
-  padding: 120px 0 5% 10%;
+  margin: 120px 0 5% 10%;
+}
+
+.user_image_figure {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .user_name_under_image {
