@@ -2,7 +2,21 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  process resize_to_fill: [290, 390, "Center"]
+
+  version :thumb do 
+    process resize_to_fit: [290, 390] 
+  end
+  version :thumb150 do 
+   process resize_to_fit: [150, 150] 
+  end
+  version :thumb50 do 
+    process resize_to_fit: [50, 50] 
+   end
+
+  def default_url
+    ActionController::Base.helpers.asset_path([version_name, "default.jpg"].compact.join('_'))
+  end
+  # process resize_to_fill: [290, 390, "Center"]
   # Choose what kind of storage to use for this uploader:
   # storage :file
   storage :fog

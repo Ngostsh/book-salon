@@ -3,7 +3,7 @@
         <%= render 'module/header-mypage.html.erb' %>
     <div class=user_image_profile>
     <div class=user_image>
-    <%= image_tag("#{@user.image}", size: "150x150", class: "user_image_figure") %>
+    <%= image_tag @user.image.thumb150.url, class: "user_image_figure" %>
     <p class=user_name_under_image><%= @user.nick_name =%></p>
     </div> 
     <div class=user_profile>

@@ -30,7 +30,7 @@
       </div>
               </div>
               <nav>
-                <%= image_tag("#{current_user.image}", size: "50x50", class: "header_user_image") %>
+                <%= image_tag current_user.image.thumb50.url, class: "header_user_image" %>
                 <button class=menu_button><span>Menu</span>
                 <i class="fas fa-caret-down"></i>
                 </button>
