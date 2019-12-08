@@ -576,7 +576,7 @@ li {
 }
 
 .fa-cog {
-  margin-right: 14px;
+  margin-right: 5px;
 }
 
 .fa-comments {
@@ -642,4 +642,12 @@ li {
   color: #432;
   text-align: center;
   font-weight: bold;
+}
+
+.header_user_image {
+  position: absolute;
+  top: 15px;
+  right: calc(3% + 123px);
+  overflow: hidden;
+  border-radius: 50%;
 }

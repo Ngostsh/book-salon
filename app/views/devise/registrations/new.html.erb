@@ -5,15 +5,24 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+   <div class="image_field">
+    <%= f.label :image, 'ユーザー画像', class: "image_label"%><br>
+    <%= f.file_field :image %>
+    </div>
+
   <div class="field">
     <%= f.label :nick_name, 'ニックネーム（２０文字以内）'%><br>
     <%= f.text_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email, 'メールアドレス' %><br />
+    <%= f.label :email, 'メールアドレス（●●●@●●●.com という形式で入力して下さい）' %><br />
     <%= f.email_field :email, class: "user_input", autofocus: true, autocomplete: "email" %>
   </div>
+
+    <div class="field">
+  <%= f.label :profile, 'プロフィール（１０００文字以内）'%><br>
+  <%= f.text_area :profile, placeholder: "", value: "プロフィールを入力してください", class: "user_input_profile" %>
 
   <div class="field">
     <%= f.label :password, 'パスワード' %>

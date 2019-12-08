@@ -30,6 +30,7 @@
       </div>
               </div>
               <nav>
+                <%= image_tag("#{current_user.image}", size: "50x50", class: "header_user_image") %>
                 <button class=menu_button><span>Menu</span>
                 <i class="fas fa-caret-down"></i>
                 </button>
@@ -40,8 +41,8 @@
                 <%= link_to "#", class: "menu_link" do %>
                 <li><i class="far fa-comment"></i>コメント一覧</li>
                 <% end %>
-                <%= link_to "#", class: "menu_link" do %>
-                <li><i class="fas fa-cog"></i>設定</li>
+                <%= link_to edit_user_registration_path, class: "menu_link" do %>
+                <li><i class="fas fa-cog"></i>ユーザー編集</li>
                 <% end %>
                 <%= link_to destroy_user_session_path, method: :delete, class: "menu_link" do %>
                 <li class=li_last><i class="fas fa-sign-out-alt"></i>ログアウト</li>
