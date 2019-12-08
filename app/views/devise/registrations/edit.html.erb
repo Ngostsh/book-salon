@@ -22,7 +22,7 @@
   <%= f.text_area :profile, placeholder: "", value: current_user.profile, class: "user_input_profile" %>
 
   <div class="field">
-    <%= f.label :email, 'メールアドレス（●●●@●●●.com という形式で入力して下さい）'%><br />
+    <%= f.label :email, 'メールアドレス（●●●@●●●.●●● という形式で入力して下さい）'%><br />
     <%= f.email_field :email, class: "user_input", autofocus: true, autocomplete: "email" %>
   </div>
 
