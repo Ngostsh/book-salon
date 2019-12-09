@@ -1,0 +1,45 @@
+      <div class=wallpaper>
+        <div id="menu2" class="big-bg">
+        <%= render 'module/header-mypage.html.erb' %>
+    <div class=user_image_profile>
+    <div class=user_image>
+    <%= image_tag @user.image.thumb150.url, class: "user_image_figure" %>
+    <p class=user_name_under_image><%= @user.nick_name =%></p>
+    </div> 
+    <div class=user_profile>
+    <p class=profile_text>
+    <%= @user.profile %>
+    </p>
+    </div>
+    </div>
+        <p class=bookreview_nick_name><%= @user.nick_name %> さんのブックレビュー</p>
+        <div class="wrapper user_review_list">
+        <% if @reviews == [] %>
+        <h2>まだレビューはありません</h2>
+        <% end %>
+      <% @reviews.each do |review| %>
+        <div class=review_block2>
+          <div class=review_book_title>
+          <%= link_to "/books/#{review.book.id}", class: "review_link_to" do %>
+          <p><%= "#{review.book.name}" %></p>
+          <% end %>
+          </div>
+          <div class=review_content_box>
+          <div class="review_rate_and_link">
+          <p class=review_rate_number>評価：<%= review.rate %></p>
+          <div class=review_edit_destory_link>
+          <%= link_to "削除", "/reviews/#{review.id}", method: :delete, class: 'review_destroy_link', data: {confirm: "削除しますか？"} %>
+          </div>
+          </div>
+          <div class="review_content"><%= review.review %></div>
+          </div>
+      </div>
+      <% end %>
+        <%= paginate(@reviews) %>
+      </div>
+      </div>
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy; 2019 Nagao</small></p>
+            </div>
+        </footer>

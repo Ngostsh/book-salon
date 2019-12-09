@@ -174,3 +174,107 @@
 .user_input {
   background-color: #FFF;
 }
+
+.Review_List {
+  text-align: center;
+  color: #FFF;
+  font-size: 2em;
+  margin-top: 50px;
+}
+
+.reviews {
+  padding: 30px;
+}
+
+.review_block {
+  margin: 40px;
+  padding: 10px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.74);
+  border-radius: 0.4em;
+  border: 4px solid rgb(79, 215, 233);
+  position: relative;
+}
+
+.review_nick_name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.review_rate_and_link {
+  display: flex;
+}
+
+.review_edit_destory_link {
+  font-size: 1.5em;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  .review_destroy_link {
+    color: red;
+  }
+}
+
+.review_rate_number {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.review_content_box {
+  padding: 8px;
+}
+
+.review_content {
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+.review_form {
+  margin: 50px;
+  padding: 50px;
+  border: 4px solid rgb(79, 215, 233);
+  border-radius: 0.4em;
+  background-color:rgba(35, 107, 129, 0.527); 
+}
+
+.review_rate {
+  color: #fff;
+  font-size: 2em;
+}
+
+.review_rate_field {
+  color: #fff;
+  font-size: 2em;
+  border-radius: 0.4em;
+  border: 4px solid rgb(79, 215, 233);
+  text-align: center;
+}
+
+.form__review {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 300px;
+  font-size: 1.5em;
+  border: 4px solid rgb(79, 215, 233);
+  border-radius: 0.4em;
+  background-color: rgba(255, 255, 255, 0.74);
+}
+
+.form__submit {
+border: none;
+outline: none;
+display: block;
+line-height: 40px;
+width: 200px;
+text-align: center;
+font-size: 16px;
+color: #fff;
+background-color: #696;
+border-bottom: 4px solid #464;
+cursor:pointer;
+transition:0.1s ease all;
+border-radius: 20px;
+margin: 0 auto;
+}

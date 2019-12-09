@@ -99,3 +99,25 @@ input#user_password_confirmation{
   background-color: rgb(255, 255, 255);
   font-size: 16px;
 }
+
+.review_block2 {
+  margin: 40px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.74);
+  border-radius: 0.4em;
+  border: 4px solid rgb(79, 215, 233);
+  position: relative;
+}
+
+.review_book_title {
+  font-size: 1.5em;
+  a {
+    color:  rgb(14, 149, 228);
+  }
+}
+
+.user_review_list {
+  margin: 3%;
+  padding: 3%;
+  background-color: rgb(252, 229, 206);
+}

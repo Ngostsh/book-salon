@@ -1,0 +1,60 @@
+<div class=base2>
+<div class=show_box>
+<% if current_user == @user %>
+<div class=user_show_link>
+<%= link_to "/users/#{current_user.id}", class: "user_link_to" do %>
+<span class = reviewer>Your Registration Book</span>
+<% end %>
+<div class=user_edit_destory_link>
+<%= link_to "編集", "/books/edit/#{@book.id}", method: :get, class: 'user_review_edit' %>
+<%= link_to "削除", "/books/#{@book.id}", method: :delete, class: 'user_review_destroy', data: {confirm: "削除しますか？"} %>
+</div>
+</div>
+<% else %>
+<% end %>
+  <div class = "book_name">
+<%= @book.name %>
+</div>
+ <div class=box2>
+  <div class="book-image">
+    <img src="<%= @book.image %>" alt="">
+  </div>
+  <div class="review-contents">
+    <%= simple_format(@book.text) %>
+  </div>
+  </div>
+  <% if @reviews != [] %>
+  <h2 class=Review_List>< Review List ></h2>
+  <% end %>
+<div class=reviews>
+<% if @reviews %>
+      <% @reviews.each do |review| %>
+        <div class=review_block>
+          <div class="user_image_nick_name">
+          <%= image_tag review.user.image.thumb50.url, class: "review_user_image" %>
+          <p class=review_nick_name><%= review.user.nick_name %></p>
+          </div>
+          <div class=review_content_box>
+          <div class="review_rate_and_link">
+          <p class=review_rate_number>評価：<%= review.rate %></p>
+          <div class=review_edit_destory_link>
+          <%= link_to "削除", "/reviews/#{review.id}", method: :delete, class: 'review_destroy_link', data: {confirm: "削除しますか？"} %>
+          </div>
+          </div>
+          <div class="review_content"><%= review.review %></div>
+          </div>
+      </div>
+      <% end %>
+      <% end %>
+</div>
+<% if user_signed_in? %>
+<%= form_with(model: @review, url: '/reviews', class: "review_form", id: 'new_review') do |f| %>
+<%= f.hidden_field :book_id, value: @book.id %>
+<%= f.label :rate, '評価', class: "review_rate" %>
+<%= f.number_field :rate, value: 1, max: 10, min: 1, class: 'review_rate_field' %><br>
+<%= f.text_area :review, class: 'form__review', placeholder: '' %>
+<%= f.submit '投稿する', class: "form__submit" %>
+<% end %>
+  </div>
+</div>
+<% end %>

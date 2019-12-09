@@ -1,0 +1,29 @@
+$(function(){
+
+  function buildHTML(review){
+      var html =
+      `<div class=review_block>
+          <div class="user_image_nick_name">
+          <%= image_tag @review.user.image.thumb50.url, class: "review_user_image" %>
+          <p class=review_nick_name><%= @review.user.nick_name %></p>
+          </div>
+          <div class=review_content_box>
+          <div class="review_rate_and_link">
+          <p class=review_rate_number>評価：<%= @review.rate %></p>
+          <div class=review_edit_destory_link>
+          <%= link_to "削除", "/reviews/#{@review.id}", method: :delete, class: 'review_destroy_link', data: {confirm: "削除しますか？"} %>
+          </div>
+          </div>
+          <div class="review_content"><%= @review.review %></div>
+          </div>
+        </div>`
+      return html;
+  };
+
+  var html = buildHTML(review);
+  $('.reviews').append(html);
+  $('.reviews').animate({scrollTop: $('.reviews')[0].scrollHeight}, 'fast');
+  $('form')[0].reset();
+  $('.form__submit').attr('disabled', false);
+  
+});

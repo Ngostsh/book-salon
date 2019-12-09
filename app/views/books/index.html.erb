@@ -7,31 +7,28 @@
                 <h2 class="page-title">BOOK SALON</h2>
                 <span class = page-subtitle>
                     お気に入りの本を紹介しましょう！</span>
-          <%# if user_signed_in? %>
-          <%# <a class="cp_btn" href="#"><i class="fas fa-book"></i>本を登録する</a> %>
-          <%# end %>
-          <a class="cp_btn" href="/reviews/new"><i class="fas fa-edit"></i>書評を書く</a>
+          <a class="cp_btn" href="/books/new"><i class="fas fa-edit"></i>本を登録する</a>
             </div>
         </div>
         <div class = "brown_bar"></div>
-        <% if Review.page(params[:page]) == Review.page(1)%>
-          <p class = "New_Book_Reviws">New Book Reviews</p>
+        <% if Book.page(params[:page]) == Book.page(1)%>
+          <p class = "New_Book_Reviws">New Registration Book</p>
           <% end %>
         <div class="wrapper grid">
 
-        <% @reviews.each do |review| %>
+        <% @books.each do |book| %>
             <div class="review_item">
-            <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
-          <img src="<%= review.image %>" alt="">
+            <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
+          <img src="<%= book.image %>" alt="">
           <div class=review_book_name>
-          <p><%= "#{review.name}" %></p>
+          <p><%= "#{book.name}" %></p>
           </div>
           <% end %>
             </div>
         <% end %>
       </div>
       <div class="paginate_box">
-        <%= paginate(@reviews) %>
+        <%= paginate(@books) %>
         </div>
         <footer>
             <div class="wrapper">

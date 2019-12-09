@@ -12,19 +12,22 @@
     </p>
     </div>
     </div>
-        <p class=bookreview_nick_name><%= @user.nick_name %> さんのブックレビュー</p>
+        <p class=bookreview_nick_name><%= @user.nick_name %> さんが登録した本</p>
         <div class="wrapper grid2">
-        <% @reviews.each do |review| %>
+        <% @books.each do |book| %>
             <div class="review_item">
-            <%= link_to "/reviews/#{review.id}", class: "review_link_to" do %>
-          <img src="<%= review.image %>" alt="">
+            <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
+          <img src="<%= book.image %>" alt="">
           <div class=review_book_name>
-          <p><%= "#{review.name}" %>
+          <p><%= "#{book.name}" %>
           </p></div>
           <% end %>
             </div>
         <% end %>
-        <%= paginate(@reviews) %>
+        <%= paginate(@books) %>
+                <% if @books == [] %>
+        <h2>登録した本はありません</h2>
+        <% end %>
       </div>
       </div>
         <footer>

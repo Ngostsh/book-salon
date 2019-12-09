@@ -181,8 +181,9 @@ iframe {
   display: grid;
   gap: 26px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  padding-top: 3%;
-  padding-bottom: 50px;
+  margin: 3%;
+  padding: 3%;
+  background-color: rgb(252, 229, 206);
 }
 
 .grid {
@@ -579,8 +580,8 @@ li {
   margin-right: 5px;
 }
 
-.fa-comments {
-    margin-right: 5px;
+.fa-comment {
+    margin-right: 20px;
 }
 
 .fa-sign-out-alt {
@@ -601,6 +602,11 @@ li {
 
 .fa-book {
   margin-right: 8px;
+}
+
+.fa-home {
+  margin-top: 12px;
+  margin-right: 16px;
 }
 
 
