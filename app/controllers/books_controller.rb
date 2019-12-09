@@ -53,7 +53,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.user_id == current_user.id
-      @rbook.update(book_update_params)
+      @book.update(book_update_params)
       redirect_to root_url, notice: '本の情報を更新しました'
     else
       redirect_to root_url, alert: '投稿ユーザーではないため、本の情報に失敗しました'
