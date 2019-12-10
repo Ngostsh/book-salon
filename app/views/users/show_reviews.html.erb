@@ -27,9 +27,11 @@
           <div class=review_content_box>
           <div class="review_rate_and_link">
           <p class=review_rate_number>評価：<%= review.rate %></p>
+          <% if review.user == current_user %>
           <div class=review_edit_destory_link>
           <%= link_to "削除", "/reviews/#{review.id}", method: :delete, class: 'review_destroy_link', data: {confirm: "削除しますか？"} %>
           </div>
+          <% end %>
           </div>
           <div class="review_content"><%= review.review %></div>
           </div>
