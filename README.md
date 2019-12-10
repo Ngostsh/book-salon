@@ -1,24 +1,33 @@
-# README
+# BOOK SALON
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+書評投稿アプリです。お気に入りの本を登録し、その本の評価やレビューを投稿することができます。
 
-Things you may want to cover:
+# 使用技術
 
-* Ruby version
+Ruby 2.5.1
 
-* System dependencies
+Ruby on Rails 5.2.4
 
-* Configuration
+開発環境 : Visual Sutudio Code
 
-* Database creation
+アップロード : Heroku, AWS(S3)
 
-* Database initialization
+データベース : PostgreSQL
 
-* How to run the test suite
+# 機能一覧
 
-* Services (job queues, cache servers, search engines, etc.)
+ユーザー新規登録（画像投稿含む）・ログイン・テストログイン・ログアウト・編集機能
 
-* Deployment instructions
+本の登録（画像投稿含む）・編集・削除機能
 
-* ...
+レビュー投稿機能（Ajaxを用いた非同期通信）・削除機能
+
+本の一覧表示機能
+
+ページネーション機能
+
+本の検索機能
+
+ユーザーが登録した本・投稿したレビューの一覧機能
+
+レスポンシブ対応
