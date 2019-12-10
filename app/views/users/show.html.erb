@@ -24,10 +24,12 @@
           <% end %>
             </div>
         <% end %>
+        <div class="paginate_box">
         <%= paginate(@books) %>
                 <% if @books == [] %>
-        <h2>登録した本はありません</h2>
+        <h3>登録した本はありません</h3>
         <% end %>
+        </div>
       </div>
       </div>
         <footer>

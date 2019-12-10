@@ -38,7 +38,9 @@ class BooksController < ApplicationController
 
   def destroy
     if @book.user_id == current_user.id
+      @reviews = @book.reviews
       @book.destroy
+      @reviews.destroy_all
       redirect_to root_url, notice: '本を削除しました'
     else
       redirect_to root_url, alert: '本の削除に失敗しました'
