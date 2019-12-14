@@ -15,7 +15,7 @@
         <p class=bookreview_nick_name><%= @user.nick_name %> さんのブックレビュー</p>
         <div class="wrapper user_review_list">
         <% if @reviews == [] %>
-        <h2>まだレビューはありません</h2>
+        <h3>まだレビューはありません</h3>
         <% end %>
       <% @reviews.each do |review| %>
         <div class=review_block2>
