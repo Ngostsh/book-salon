@@ -1,39 +1,40 @@
       <div class=wallpaper>
         <div id="menu2" class="big-bg">
-        <%= render 'module/header-mypage.html.erb' %>
-    <div class=user_image_profile>
-    <div class=user_image>
-    <%= image_tag @user.image.thumb150.url, class: "user_image_figure" %>
-    <p class=user_name_under_image><%= @user.nick_name =%></p>
-    </div> 
-    <div class=user_profile>
-    <p class=profile_text>
-    <%= @user.profile %>
-    </p>
-    </div>
-    </div>
-        <p class=bookreview_nick_name><%= @user.nick_name %> さんが登録した本</p>
-        <div class="wrapper grid2">
-        <% @books.each do |book| %>
+          <%= render 'module/header-mypage.html.erb' %>
+          <div class=user_image_profile>
+            <div class=user_image>
+              <%= image_tag @user.image.thumb150.url, class: "user_image_figure" %>
+              <p class=user_name_under_image><%= @user.nick_name =%></p>
+            </div>
+            <div class=user_profile>
+              <p class=profile_text>
+                <%= @user.profile %>
+              </p>
+            </div>
+          </div>
+          <p class=bookreview_nick_name><%= @user.nick_name %> さんが登録した本</p>
+          <div class="wrapper grid2">
+            <% @books.each do |book| %>
             <div class="review_item">
-            <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
-          <img src="<%= book.image %>" alt="">
-          <div class=review_book_name>
-          <p><%= "#{book.name}" %>
-          </p></div>
-          <% end %>
+              <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
+              <img src="<%= book.image %>" alt="">
+              <div class=review_book_name>
+                <p><%= "#{book.name}" %>
+                </p>
+              </div>
+              <% end %>
             </div>
-        <% end %>
-        <div class="paginate_box">
-        <%= paginate(@books) %>
-                <% if @books == [] %>
-        <h3>登録した本はありません</h3>
-        <% end %>
+            <% end %>
+            <div class="paginate_box">
+              <%= paginate(@books) %>
+              <% if @books == [] %>
+              <h3>登録した本はありません</h3>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
         <footer>
-            <div class="wrapper">
-                <p><small>&copy; 2019 Nagao</small></p>
-            </div>
+          <div class="wrapper">
+            <p><small>&copy; 2019 Nagao</small></p>
+          </div>
         </footer>

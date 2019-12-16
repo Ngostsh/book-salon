@@ -1,37 +1,37 @@
       <div class=wallpaper>
         <div id="menu" class="big-bg">
-        <%= render 'module/header.html.erb' %>
-            <header class="page-header wrapper">
-            </header>
-            <div class="menu-content wrapper">
-                <h2 class="page-title">BOOK SALON</h2>
-                <span class = page-subtitle>
-                    お気に入りの本を紹介しましょう！</span>
-          <a class="cp_btn" href="/books/new"><i class="fas fa-edit"></i>本を登録する</a>
-            </div>
+          <%= render 'module/header.html.erb' %>
+          <header class="page-header wrapper">
+          </header>
+          <div class="menu-content wrapper">
+            <h2 class="page-title">BOOK SALON</h2>
+            <span class=page-subtitle>
+              お気に入りの本を紹介しましょう！</span>
+            <a class="cp_btn" href="/books/new"><i class="fas fa-edit"></i>本を登録する</a>
+          </div>
         </div>
-        <div class = "brown_bar"></div>
+        <div class="brown_bar"></div>
         <% if Book.page(params[:page]) == Book.page(1)%>
-          <p class = "New_Book_Reviws">New Registration Book</p>
-          <% end %>
+        <p class="New_Book_Reviws">New Registration Book</p>
+        <% end %>
         <div class="wrapper grid">
 
-        <% @books.each do |book| %>
-            <div class="review_item">
+          <% @books.each do |book| %>
+          <div class="review_item">
             <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
-          <img src="<%= book.image %>" alt="">
-          <div class=review_book_name>
-          <p><%= "#{book.name}" %></p>
+            <img src="<%= book.image %>" alt="">
+            <div class=review_book_name>
+              <p><%= "#{book.name}" %></p>
+            </div>
+            <% end %>
           </div>
           <% end %>
-            </div>
-        <% end %>
-      </div>
-      <div class="paginate_box">
-        <%= paginate(@books) %>
+        </div>
+        <div class="paginate_box">
+          <%= paginate(@books) %>
         </div>
         <footer>
-            <div class="wrapper">
-                <p><small>&copy; 2019 Nagao</small></p>
-            </div>
+          <div class="wrapper">
+            <p><small>&copy; 2019 Nagao</small></p>
+          </div>
         </footer>

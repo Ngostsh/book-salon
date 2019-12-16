@@ -1,27 +1,27 @@
 <div class=wallpaper>
   <div id="menu2" class="big-bg">
-  <%= render 'module/header.html.erb' %>
-      <div class=search_box>
-      </div>
-  <div class="wrapper grid2">
-  <% @books.each do |book| %>
-      <div class="review_item">
-      <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
-    <img src="<%= book.image %>" alt="">
-    <div class=review_book_name>
-    <p><%= "#{book.name}" %></p>
+    <%= render 'module/header.html.erb' %>
+    <div class=search_box>
     </div>
-    <% end %>
+    <div class="wrapper grid2">
+      <% @books.each do |book| %>
+      <div class="review_item">
+        <%= link_to "/books/#{book.id}", class: "review_link_to" do %>
+        <img src="<%= book.image %>" alt="">
+        <div class=review_book_name>
+          <p><%= "#{book.name}" %></p>
+        </div>
+        <% end %>
       </div>
-  <% end %>
-<div class="paginate_box">
-  <%= paginate(@books) %>
-  </div>
-  </div>
-  </div>
-  </div>
-  <footer>
-      <div class="wrapper">
-          <p><small>&copy; 2019 Nagao</small></p>
+      <% end %>
+      <div class="paginate_box">
+        <%= paginate(@books) %>
       </div>
-  </footer>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="wrapper">
+    <p><small>&copy; 2019 Nagao</small></p>
+  </div>
+</footer>

@@ -1,59 +1,59 @@
-<div class = user_base>
-<div class = user_box>
-<h2><%= current_user.nick_name %> のユーザー情報編集</h2>
-<br>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-   <div class="image_field">
-    <%= f.label :image, 'Previous Image', class: "image_label"%><br>
-    <%= image_tag @user.image.thumb50.url, class: "image_file" %>
+<div class=user_base>
+  <div class=user_box>
+    <h2><%= current_user.nick_name %> のユーザー情報編集</h2>
     <br>
-    <%= f.file_field :image %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="image_field">
+      <%= f.label :image, 'Previous Image', class: "image_label"%><br>
+      <%= image_tag @user.image.thumb50.url, class: "image_file" %>
+      <br>
+      <%= f.file_field :image %>
     </div>
 
-  <div class="field">
-    <%= f.label :nick_name, 'ニックネーム（２０文字以内）'%><br>
-    <%= f.text_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
+    <div class="field">
+      <%= f.label :nick_name, 'ニックネーム（２０文字以内）'%><br>
+      <%= f.text_field :nick_name, class: "user_input", autofocus: true, autocomplete: "nick_name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :profile, 'プロフィール（１０００文字以内）'%><br>
+      <%= f.text_area :profile, placeholder: "", value: current_user.profile, class: "user_input_profile" %>
+
+      <div class="field">
+        <%= f.label :email, 'メールアドレス（●●●@●●●.●●● という形式で入力して下さい）'%><br />
+        <%= f.email_field :email, class: "user_input", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :password, '新しいパスワード'%> <i>(<%= @minimum_password_length %> 文字以上、半角英数字の両方が含まれるもの)</i><br />
+        <%= f.password_field :password, class: "user_input", autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, '新しいパスワードの確認' %><br />
+        <%= f.password_field :password_confirmation, class: "user_input", autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password, class: "user_input", autocomplete: "current-password" %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= button_tag type: "submit", class: "login" do %>
+        <i class="fas fa-cog"></i>変更する
+        <% end %>
+
+      </div>
+      <% end %>
+      <br>
+      <a href="/books">トップページへ戻る</a>
+    </div>
   </div>
-
-  <div class="field">
-  <%= f.label :profile, 'プロフィール（１０００文字以内）'%><br>
-  <%= f.text_area :profile, placeholder: "", value: current_user.profile, class: "user_input_profile" %>
-
-  <div class="field">
-    <%= f.label :email, 'メールアドレス（●●●@●●●.●●● という形式で入力して下さい）'%><br />
-    <%= f.email_field :email, class: "user_input", autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password, '新しいパスワード'%> <i>(<%= @minimum_password_length %> 文字以上、半角英数字の両方が含まれるもの)</i><br />
-    <%= f.password_field :password, class: "user_input", autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, '新しいパスワードの確認' %><br />
-    <%= f.password_field :password_confirmation, class: "user_input", autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %>
-    <%= f.password_field :current_password, class: "user_input", autocomplete: "current-password" %>
-  </div>
-<br>
-  <div class="actions">
-    <%= button_tag type: "submit", class: "login" do %>
-    <i class="fas fa-cog"></i>変更する
-    <% end %>
-
-  </div>
-<% end %>
-<br>
-<a href="/books">トップページへ戻る</a>
-</div>
-</div>
-<br>
+  <br>
