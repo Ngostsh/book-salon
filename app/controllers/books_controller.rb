@@ -25,7 +25,7 @@ class BooksController < ApplicationController
         render action: :new
       end
     else
-      @book = Book.new(review_params)
+      @book = Book.new(book_params)
       @book.image = File.open("app/assets/images/default.jpg")
       if @book.save
         redirect_to root_url, notice: '登録ありがとうございます'
