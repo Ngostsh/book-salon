@@ -21,8 +21,7 @@ class BooksController < ApplicationController
       if @book.save
         redirect_to root_url, notice: '登録ありがとうございます'
       else
-        flash.now[:notice] = "登録に失敗しました"
-        render action: :new
+        redirect_to root_url, alert: '登録に失敗しました'
       end
     else
       @book = Book.new(book_params)
@@ -30,8 +29,7 @@ class BooksController < ApplicationController
       if @book.save
         redirect_to root_url, notice: '登録ありがとうございます'
       else
-        flash.now[:notice] = "登録に失敗しました"
-        render action: :new
+        redirect_to root_url, alert: '登録に失敗しました'
       end
     end
   end

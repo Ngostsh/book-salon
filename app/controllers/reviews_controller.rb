@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
         format.js
       end
     else
-      redirect_to root_path, alert: 'レビューを入力してください'
+      redirect_to root_url, alert: 'レビューを入力してください'
     end
   end
 
